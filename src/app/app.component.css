@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  padding: 3%;
+}
+
+main {
+  background-color: #FEE0E0;
+}
+
+.titulos{
+  font-family: 'Bebas Neue';
+  font-size: 100px;
+}

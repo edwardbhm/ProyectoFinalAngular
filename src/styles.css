@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+/* Establecer el color de fondo para todo el cuerpo de la página */
+body {
+    background-color: #FEE0E0;
+}
+

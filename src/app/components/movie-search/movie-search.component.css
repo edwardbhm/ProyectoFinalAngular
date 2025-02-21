@@ -1,0 +1,64 @@
+body {
+  background-color: #FEE0E0;
+}
+
+.barrabusqueda {
+  display: grid;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+}
+
+button {
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-bottom: 1%;
+  border-radius: 20px;
+  background-color:rgba(255, 252, 215, 0.705) ;
+}
+
+/* Asegúrate de que div1 es el contenedor que organiza las películas */
+.div1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columnas de igual tamaño */
+  gap: 20px;  /* Espacio entre las películas */
+  margin-top: 20px;  /* Espacio superior */
+}
+
+/* Estilos para cada película */
+.div2 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* Asegúrate de que las imágenes se ajusten bien */
+/* Asegúrate de que las imágenes tengan el mismo tamaño */
+.div3 img {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+  height: 90%; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+
+/* Estilo para el título y el enlace */
+.div4 h5 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.div4 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.div4 a:hover {
+  text-decoration: underline;
+}
+
+input {
+  border-radius: 20px;
+}

@@ -23,10 +23,15 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "src"
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -81,7 +86,11 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "src"
               }
             ],
             "styles": [
@@ -92,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "00225f58-53dd-4acd-9971-5eb93eebf538"
   }
 }
