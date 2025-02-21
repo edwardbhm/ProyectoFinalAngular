@@ -1,24 +1,29 @@
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    </head>
-    <main>
-      <h1 class="titulos">Movie-Search</h1>
-      <div *ngIf="movies.length > 0">
-        <ul>
-          <li *ngFor="let movie of movies">
-            <h3>{{ movie.title }}</h3>
-            <p>{{ movie.overview }}</p>
-          </li>
-        </ul>
-      </div>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<main>
+  <div class="header">
+    <img class="logo" src="assets/logo.png" alt="Logo izquierdo">
+    <h1 class="titulos">Movie-Search</h1>
+    <img class="logo" src="assets/logo.png" alt="Logo derecho">
+  </div>
 
-      <div *ngIf="movies.length === 0 && query && !isLoading">
-        <p>No se encontraron películas.</p>
-      </div>
+  <div *ngIf="movies.length > 0">
+    <ul>
+      <li *ngFor="let movie of movies">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.overview }}</p>
+      </li>
+    </ul>
+  </div>
 
-      <div *ngIf="isLoading">Cargando...</div>
+  <div *ngIf="movies.length === 0 && query && !isLoading">
+    <p>No se encontraron películas.</p>
+  </div>
 
-<router-outlet></router-outlet>
+  <div *ngIf="isLoading">Cargando...</div>
+
+  <router-outlet></router-outlet>
 </main>

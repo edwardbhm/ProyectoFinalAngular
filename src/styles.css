@@ -1,5 +1,22 @@
-/* Establecer el color de fondo para todo el cuerpo de la página */
 body {
-    background-color: #FEE0E0;
-}
-
+    background: rgba(254, 224, 224, 1); /* Fondo rosa sin opacidad */
+    background-image: url('assets/fondo.png'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija cuando se hace scroll */
+  }
+  
+  body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/fondo.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Ajusta la opacidad de la imagen (0 es completamente transparente, 1 es completamente opaco) */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+  }
+  

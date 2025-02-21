@@ -7,14 +7,18 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 1%;
+  padding: 10px;
 }
 
 button {
   margin-left: 40%;
   margin-right: 40%;
   margin-bottom: 1%;
-  border-radius: 20px;
-  background-color:rgba(255, 252, 215, 0.705) ;
+  border-radius: 30px;
+  padding: 7px;
+  background-color:#f18390 ;
+  color: #ffffff;
+  font-size: large;
 }
 
 /* Asegúrate de que div1 es el contenedor que organiza las películas */
@@ -23,15 +27,18 @@ button {
   grid-template-columns: repeat(3, 1fr);  /* 3 columnas de igual tamaño */
   gap: 20px;  /* Espacio entre las películas */
   margin-top: 20px;  /* Espacio superior */
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* Estilos para cada película */
 .div2 {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
   overflow: hidden;
+  color: #000000;
 }
 
 /* Asegúrate de que las imágenes se ajusten bien */
@@ -48,17 +55,31 @@ button {
 .div4 h5 {
   font-size: 1.1rem;
   margin: 10px 0;
+  text-align: center;
 }
 
 .div4 a {
-  color: #007bff;
+  color: #ffffff;  /* Color del texto */
   text-decoration: none;
+  padding: 10px 20px;  /* Espaciado interno para el recuadro */
+  background-color: #f18390;  /* Fondo rosa */
+  display: inline-block;  /* Para que se ajuste al tamaño del texto */
+  text-align: center;
+  width: 100%;  /* Para que ocupe todo el espacio disponible */
+  border-radius: 30px;
 }
+
+.div4 a:hover {
+  background-color: #f09595;  /* Fondo rosa más claro cuando se pasa el ratón */
+  text-decoration: underline;  /* Subrayado en hover */
+}
+
 
 .div4 a:hover {
   text-decoration: underline;
 }
 
 input {
-  border-radius: 20px;
+  border-radius: 30px;
+  font-size: large;
 }

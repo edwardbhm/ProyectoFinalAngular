@@ -1,13 +1,23 @@
-h1 {
-  text-align: center;
-  padding: 3%;
+/* Contenedor de la cabecera */
+.header {
+  display: flex;
+  justify-content: center; /* Centra el contenido dentro del contenedor */
+  align-items: center; /* Alinea los items verticalmente */
+  gap: 20px; /* Agrega espacio entre el logo y el título */
+  padding: 3% 0;
+}
+
+.logo {
+  width: 200px; /* Ajusta el tamaño del logo según lo que prefieras */
+  height: auto; /* Mantiene la proporción del logo */
+}
+
+.titulos {
+  font-family: 'Bebas Neue';
+  font-size: 120px;
+  margin: 0;
 }
 
 main {
   background-color: #FEE0E0;
-}
-
-.titulos{
-  font-family: 'Bebas Neue';
-  font-size: 100px;
 }
