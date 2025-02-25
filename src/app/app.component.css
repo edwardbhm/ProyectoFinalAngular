@@ -1,11 +1,12 @@
 /* Contenedor de la cabecera */
+
 .header {
   display: flex;
   justify-content: center; /* Centra el contenido dentro del contenedor */
   align-items: center; /* Alinea los items verticalmente */
   gap: 20px; /* Agrega espacio entre el logo y el título */
   padding: 3% 0;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .logo {
@@ -19,6 +20,4 @@
   margin: 0;
 }
 
-main {
-  background-color: #FEE0E0;
-}
+
