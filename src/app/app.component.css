@@ -5,6 +5,7 @@
   align-items: center; /* Alinea los items verticalmente */
   gap: 20px; /* Agrega espacio entre el logo y el título */
   padding: 3% 0;
+  background-color: transparent;
 }
 
 .logo {
