@@ -83,3 +83,43 @@ input {
   border-radius: 30px;
   font-size: large;
 }
+
+.recent-searches {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido horizontalmente */
+  text-align: center; /* Centrar el texto */
+  margin-top: 20px;
+}
+
+.recent-searches ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-searches li {
+  cursor: pointer;
+  padding: 5px;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.recent-searches li:hover {
+  background: #f0f0f0;
+}
+
+.recent-searches button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background-color: #f18390;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+
+}
+
+.recent-searches button:hover {
+  background-color: #f09595;
+}

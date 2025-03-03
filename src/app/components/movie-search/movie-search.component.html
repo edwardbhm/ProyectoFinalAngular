@@ -1,17 +1,26 @@
 <body>
-
   <!-- Input de búsqueda con ngModel -->
   <div class="barrabusqueda">
-  <input 
-    class="barrabusqueda"
-    type="text" 
-    [(ngModel)]="searchQuery" 
-    placeholder="  Escribe el nombre de una película..." 
-    (keyup.enter)="searchMovies()"
-  >
+    <input 
+      class="barrabusqueda"
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      placeholder="  Escribe el nombre de una película..." 
+      (keyup.enter)="searchMovies()"
+    >
+    <button (click)="searchMovies()">Buscar</button>
+  </div>
 
-  <button (click)="searchMovies()">Buscar</button>
-</div>
+  <!-- Sección de búsquedas recientes -->
+  <div *ngIf="searchHistory.length > 0" class="recent-searches">
+    <h3>Búsquedas recientes</h3>
+    <ul>
+      <li *ngFor="let query of searchHistory" (click)="useRecentSearch(query)">
+        {{ query }}
+      </li>
+    </ul>
+    <button (click)="clearHistory()">Borrar historial</button>
+  </div>
 
   <!-- Mostrar resultados -->
   <div class="div1">
@@ -25,5 +34,4 @@
       </div>
     </div>
   </div>
-
 </body>

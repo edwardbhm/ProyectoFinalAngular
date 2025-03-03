@@ -1,45 +1,64 @@
-import { Component } from '@angular/core';
-import { NgFor } from '@angular/common'; // Importamos NgFor para iterar listas en la plantilla
-import { FormsModule } from '@angular/forms'; // Importamos FormsModule para el enlace de datos en formularios
-import { MovieService } from '../../services/movie.service'; // Importamos el servicio de películas
-import { RouterModule } from '@angular/router'; // Importamos RouterModule para la navegación
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';
+import { MovieService } from '../../services/movie.service';
+import { RouterModule } from '@angular/router';
 
-/**
- * Componente para buscar películas mediante un formulario de búsqueda.
- */
 @Component({
   selector: 'app-movie-search',
   standalone: true,
   templateUrl: './movie-search.component.html',
   styleUrls: ['./movie-search.component.css'],
-  imports: [NgFor, FormsModule, RouterModule] // Módulos necesarios para la plantilla
+  imports: [CommonModule, FormsModule, RouterModule] // ✅ Asegurar que CommonModule está aquí
 })
-export class MovieSearchComponent {
-  /**
-   * Cadena que almacena la consulta de búsqueda del usuario.
-   */
+export class MovieSearchComponent implements OnInit {
   searchQuery = '';
-
-  /**
-   * Lista de películas obtenidas de la búsqueda.
-   */
   movies: any[] = [];
+  searchHistory: string[] = [];
 
-  /**
-   * Constructor del componente.
-   * @param movieService - Servicio para buscar películas en la API.
-   */
   constructor(private movieService: MovieService) {}
 
   /**
-   * Método para buscar películas basado en la consulta del usuario.
-   * Hace una petición al servicio solo si la consulta no está vacía.
+   * Cargar el historial al iniciar el componente.
+   */
+  ngOnInit() {
+    this.loadSearchHistory();
+  }
+
+  /**
+   * Busca películas y actualiza el historial.
    */
   searchMovies() {
-    if (this.searchQuery.length > 0) {
+    if (this.searchQuery.trim()) {
       this.movieService.searchMovies(this.searchQuery).subscribe((data: any) => {
         this.movies = data.results;
+        this.loadSearchHistory(); // Actualizar historial en la vista
       });
     }
+  }
+
+  /**
+   * Cargar historial de LocalStorage.
+   */
+  loadSearchHistory() {
+    this.searchHistory = this.movieService.getSearchHistory();
+    console.log('Historial actualizado:', this.searchHistory); // 🔍 Debugging
+  }
+
+  /**
+   * Usar una búsqueda reciente.
+   */
+  useRecentSearch(query: string) {
+    this.searchQuery = query;
+    this.searchMovies();
+  }
+
+  /**
+   * Borrar historial y actualizar la vista.
+   */
+  clearHistory() {
+    this.movieService.clearSearchHistory();
+    this.searchHistory = []; // Vaciar la lista en la vista
   }
 }
